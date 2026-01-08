@@ -1,74 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Myco Pet Spin & Win 🐾🍄</title>
   <style>
-    body {
-      text-align: center;
-      font-family: Arial, sans-serif;
-      background: #fff7e6; /* Warm, natural Myco Pet feel */
-      margin: 0;
-      padding: 20px;
-    }
-    .logo {
-      width: 200px;
-      margin: 20px auto;
-    }
-    .wheel {
-      width: 320px;
-      height: 320px;
-      border-radius: 50%;
-      border: 12px solid #ef476f;
-      margin: 40px auto;
-      background: conic-gradient(
-        #ffd166 0% 16.6%,  /* Bone treat */
-        #ef476f 16.6% 33.3%, /* Paw print */
-        #06d6a0 33.3% 50%,   /* Mushroom magic */
-        #118ab2 50% 66.6%,   /* Happy tail wag */
-        #ff9f1c 66.6% 83.3%, /* Toy surprise */
-        #9b59b6 83.3% 100%   /* Extra love */
-      );
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-    button {
-      padding: 18px 40px;
-      font-size: 20px;
-      background: #06d6a0; /* Myco teal */
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    button:hover {
-      background: #ef476f;
-    }
-    h1 {
-      color: #ef476f;
-      font-size: 32px;
-    }
-    p {
-      font-size: 18px;
-      color: #333;
-    }
+    body { margin: 0; padding: 0; font-family: Arial, sans-serif; background: #ffffff; color: #333; text-align: center; }
+    .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+    .logo { width: 250px; margin: 30px auto; display: block; }
+    h1 { font-size: 38px; color: #0066ff; margin: 20px 0; }
+    p { font-size: 20px; line-height: 1.6; max-width: 700px; margin: 20px auto; }
+    .intro-img { width: 90%; max-width: 600px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,102,255,0.1); margin: 30px 0; }
+    .wheel-section { background: linear-gradient(to bottom, #f0f8ff, #ffffff); padding: 50px 20px; border-radius: 30px; margin: 40px 0; box-shadow: 0 10px 40px rgba(0,102,255,0.15); }
+    .wheel-container { position: relative; display: inline-block; margin: 40px 0; }
+    .wheel { width: 380px; height: 380px; border-radius: 50%; border: 18px solid #0066ff; background: conic-gradient(#ffd166 0% 16.67%, #ef476f 16.67% 33.33%, #06d6a0 33.33% 50%, #118ab2 50% 66.67%, #ff9f1c 66.67% 83.33%, #9b59b6 83.33% 100%); box-shadow: 0 15px 40px rgba(0,102,255,0.3); }
+    .arrow { position: absolute; top: -40px; left: 50%; transform: translateX(-50%); font-size: 70px; color: #0066ff; animation: pulse 2s infinite; }
+    @keyframes pulse { 0% { transform: translateX(-50%) scale(1); } 50% { transform: translateX(-50%) scale(1.1); } 100% { transform: translateX(-50%) scale(1); } }
+    button { padding: 25px 70px; font-size: 28px; background: #0066ff; color: white; border: none; cursor: pointer; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,102,255,0.4); transition: all 0.3s; }
+    button:hover { background: #0055cc; transform: translateY(-5px) scale(1.05); }
+    .paws { font-size: 50px; margin: 40px 0; color: #0066ff; animation: bounce 3s infinite; }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
+    footer { margin: 50px 0; font-size: 16px; color: #666; }
   </style>
 </head>
 <body>
-  <img src="https://myco.pet/cdn/shop/files/MycoPet_Logo.png" alt="Myco Pet Logo" class="logo"> <!-- Replace if exact logo URL differs -->
-  <h1>🎁 Spin & Unlock Mushroom Magic for Your Pet! 🐶🐱🍄</h1>
-  <p>Thanks for being a Myco Pet family member 🐾<br>Spin to win a surprise reward for your furry friend!</p>
-  <div class="wheel" id="wheel"></div>
-  <button onclick="spin()">SPIN NOW 🎡🐾</button>
+  <div class="container">
+    <img src="https://myco.pet/cdn/shop/files/MycoPet_Logo.png" alt="Myco Pet Logo" class="logo">
+    <h1>🎉 Spin for Your Pet's Mushroom Magic Surprise! 🍄🐶🐱</h1>
+    <p>Hey amazing fur parent! Thank you for trusting Myco Pet with your pet's natural wellness journey 🐾<br>Spin the wheel to unlock an exclusive reward – more energy, immunity boosts, and happy tails!</p>
+    
+    <img src="https://media.istockphoto.com/id/183425360/photo/mother-and-daughter-are-enjoying-outdoor-with-pets.jpg" alt="Happy Pet Owner with Dogs & Cats" class="intro-img">
+    
+    <div class="wheel-section">
+      <div class="paws">🐾 🐾 🍄 🐾 🐾</div>
+      <div class="wheel-container">
+        <div class="arrow">▼</div>
+        <div class="wheel" id="wheel"></div>
+      </div>
+      <button onclick="spin()">SPIN NOW 🎡🐾</button>
+      <div class="paws">🐾 🐾 🍄 🐾 🐾</div>
+    </div>
+    
+    <footer>Powered by Myco Pet – Natural Mushroom Supplements for Happier, Healthier Pets ❤️</footer>
+  </div>
 
 <script>
 function spin() {
   let wheel = document.getElementById("wheel");
-  let deg = Math.floor(3000 + Math.random() * 3000);
-  wheel.style.transition = "transform 5s ease-out";
-  wheel.style.transform = "rotate(" + deg + "deg)";
-  setTimeout(() => {
-    window.location.href = "reward.html";
-  }, 5500);
+  let deg = Math.floor(5000 + Math.random() * 5000);
+  wheel.style.transition = "transform 7s cubic-bezier(0.2, 0.8, 0.4, 1)";
+  wheel.style.transform = `rotate(${deg}deg)`;
+  document.querySelector('button').disabled = true;
+  setTimeout(() => { window.location.href = "reward.html"; }, 7500);
 }
 </script>
 </body>
