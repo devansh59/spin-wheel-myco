@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spin & Win 🎉</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      background: #fff7e6;
+    }
+    .wheel {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 10px solid #333;
+      margin: 40px auto;
+      background: conic-gradient(
+        #ffd166 0% 20%,
+        #ef476f 20% 40%,
+        #06d6a0 40% 60%,
+        #118ab2 60% 80%,
+        #ffd166 80% 100%
+      );
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background: #ef476f;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🎁 Spin & Unlock Your Surprise</h1>
+
+<div class="wheel" id="wheel"></div>
+
+<button onclick="spin()">SPIN</button>
+
+<script>
+function spin() {
+  let wheel = document.getElementById("wheel");
+  let deg = Math.floor(2000 + Math.random() * 2000);
+  wheel.style.transition = "transform 4s ease-out";
+  wheel.style.transform = "rotate(" + deg + "deg)";
+
+  setTimeout(() => {
+    window.location.href = "reward.html";
+  }, 4500);
+}
+</script>
+
+</body>
+</html>
