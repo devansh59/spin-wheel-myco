@@ -1,59 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Spin & Win 🎉</title>
+  <title>Myco Pet Spin & Win 🐾🍄</title>
   <style>
     body {
       text-align: center;
-      font-family: Arial;
-      background: #fff7e6;
+      font-family: Arial, sans-serif;
+      background: #fff7e6; /* Warm, natural Myco Pet feel */
+      margin: 0;
+      padding: 20px;
+    }
+    .logo {
+      width: 200px;
+      margin: 20px auto;
     }
     .wheel {
-      width: 300px;
-      height: 300px;
+      width: 320px;
+      height: 320px;
       border-radius: 50%;
-      border: 10px solid #333;
+      border: 12px solid #ef476f;
       margin: 40px auto;
       background: conic-gradient(
-        #ffd166 0% 20%,
-        #ef476f 20% 40%,
-        #06d6a0 40% 60%,
-        #118ab2 60% 80%,
-        #ffd166 80% 100%
+        #ffd166 0% 16.6%,  /* Bone treat */
+        #ef476f 16.6% 33.3%, /* Paw print */
+        #06d6a0 33.3% 50%,   /* Mushroom magic */
+        #118ab2 50% 66.6%,   /* Happy tail wag */
+        #ff9f1c 66.6% 83.3%, /* Toy surprise */
+        #9b59b6 83.3% 100%   /* Extra love */
       );
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
     button {
-      padding: 15px 30px;
-      font-size: 18px;
-      background: #ef476f;
+      padding: 18px 40px;
+      font-size: 20px;
+      background: #06d6a0; /* Myco teal */
       color: white;
       border: none;
       cursor: pointer;
-      border-radius: 8px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    button:hover {
+      background: #ef476f;
+    }
+    h1 {
+      color: #ef476f;
+      font-size: 32px;
+    }
+    p {
+      font-size: 18px;
+      color: #333;
     }
   </style>
 </head>
-
 <body>
-
-<h1>🎁 Spin & Unlock Your Surprise</h1>
-
-<div class="wheel" id="wheel"></div>
-
-<button onclick="spin()">SPIN</button>
+  <img src="https://myco.pet/cdn/shop/files/MycoPet_Logo.png" alt="Myco Pet Logo" class="logo"> <!-- Replace if exact logo URL differs -->
+  <h1>🎁 Spin & Unlock Mushroom Magic for Your Pet! 🐶🐱🍄</h1>
+  <p>Thanks for being a Myco Pet family member 🐾<br>Spin to win a surprise reward for your furry friend!</p>
+  <div class="wheel" id="wheel"></div>
+  <button onclick="spin()">SPIN NOW 🎡🐾</button>
 
 <script>
 function spin() {
   let wheel = document.getElementById("wheel");
-  let deg = Math.floor(2000 + Math.random() * 2000);
-  wheel.style.transition = "transform 4s ease-out";
+  let deg = Math.floor(3000 + Math.random() * 3000);
+  wheel.style.transition = "transform 5s ease-out";
   wheel.style.transform = "rotate(" + deg + "deg)";
-
   setTimeout(() => {
     window.location.href = "reward.html";
-  }, 4500);
+  }, 5500);
 }
 </script>
-
 </body>
 </html>
